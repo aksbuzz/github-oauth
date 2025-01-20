@@ -69,7 +69,6 @@ auth.get("/login/:provider/callback", async (c) => {
         userId: userInfo.id,
         email: userInfo.email,
         username: userInfo.login,
-        accessToken,
       });
     }
 

@@ -19,7 +19,6 @@ CREATE TABLE "public"."users" (
     "user_id" integer NOT NULL,
     "username" character varying(255) NOT NULL,
     "email" character varying(255) NOT NULL,
-    "access_token" character varying(255) NOT NULL,
     CONSTRAINT "users_id_key" UNIQUE ("id"),
     CONSTRAINT "users_user_id" PRIMARY KEY ("user_id")
 ) WITH (oids = false);

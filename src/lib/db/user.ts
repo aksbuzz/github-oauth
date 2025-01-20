@@ -5,7 +5,6 @@ export type User = {
   userId: string;
   username: string;
   email: string;
-  accessToken: string;
 };
 
 export type NewUser = Omit<User, "id">;
@@ -13,9 +12,9 @@ export type NewUser = Omit<User, "id">;
 export async function createUser(newUser: NewUser) {
   const [user] = await sql<Array<Pick<User, "id">>>`
     insert into users
-      (user_id, username, email, access_token)
+      (user_id, username, email)
     values
-      (${newUser.userId}, ${newUser.username}, ${newUser.email}, ${newUser.accessToken})
+      (${newUser.userId}, ${newUser.username}, ${newUser.email})
     returning id
   `;
 
